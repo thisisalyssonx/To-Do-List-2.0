@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     addTaskButton.addEventListener('click', () => {
-        if (taskDateInput.style.display === 'none' || taskDateInput.style.display === '') {
+        if (!taskDateInput.value) {
             taskDateInput.style.display = 'block';
         } else {
             addTask();

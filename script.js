@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lightThemeButton = document.getElementById('light-theme');
     const darkThemeButton = document.getElementById('dark-theme');
 
-    // Carregar tarefas do localStorage
+    
     const loadTasks = () => {
         const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         tasks.forEach(task => {
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    // Salvar tarefas no localStorage
+    
     const saveTasks = () => {
         const tasks = Array.from(taskList.children).map(li => ({
             text: li.querySelector('.task-text').textContent,
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('tasks', JSON.stringify(tasks));
     };
 
-    // Alternar tema
+   
     const setTheme = (theme) => {
         if (theme === 'dark') {
             document.body.classList.add('dark-mode');
@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', theme);
     };
 
-    // Carregar tema
+    
     const loadTheme = () => {
         const theme = localStorage.getItem('theme') || 'light';
         setTheme(theme);
     };
 
-    // Adicionar tarefa ao DOM
+    
     const addTaskToDOM = (taskText, taskDate, completed = false) => {
         const li = document.createElement('li');
         const span = document.createElement('span');
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         taskList.appendChild(li);
     };
 
-    // Adicionar nova tarefa
+    
     const addTask = () => {
         const taskText = taskInput.value.trim();
         const taskDate = taskDateInput.value;
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Mostrar campo de data ao clicar no botão adicionar
+    
     addTaskButton.addEventListener('click', () => {
         if (taskDateInput.style.display === 'none' || taskDateInput.style.display === '') {
             taskDateInput.style.display = 'block';
